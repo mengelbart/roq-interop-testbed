@@ -1,0 +1,4 @@
+.venv/
+*.json
+*.pyc
+.ipynb_checkpoints/
