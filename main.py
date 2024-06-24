@@ -2,14 +2,12 @@
 
 import argparse
 
+from testcases import roq_interop_test
 from network.network import setup, clean, setup_tc, clear_tc
-from iperf3test.iperf3test import iperf3test
 
-def iperf3test_cmd(args):
-    setup()
-    iperf3test()
-    clean()
 
+def roq_interop_test_cmd(args):
+    roq_interop_test()
 
 def setup_cmd(args):
     setup()
@@ -45,8 +43,8 @@ def main():
     clean_tc = subparsers.add_parser('clear', help='remove any tc qdiscs')
     clean_tc.set_defaults(func=clear_tc_cmd)
 
-    iperf3test = subparsers.add_parser('iperf3', help='run iperf3 test')
-    iperf3test.set_defaults(func=iperf3test_cmd)
+    roq_interop = subparsers.add_parser('roq', help='run RoQ interop test')
+    roq_interop.set_defaults(func=roq_interop_test_cmd)
 
     args = parser.parse_args()
     args.func(args)

@@ -2,3 +2,6 @@
 *.json
 *.pyc
 .ipynb_checkpoints/
+*.pem
+*.mp4
+results/
